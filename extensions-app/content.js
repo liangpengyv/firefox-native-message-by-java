@@ -4,11 +4,11 @@
  */
 document.addEventListener('send-message-event', function (data) {
 
-    const request = data.detail.data;
+    const request = data.detail;
     console.log(request);
 
     // 发送消息到 background.js
-    browser.runtime.sendMessage(request, null);
+    browser.runtime.sendMessage(request);
 });
 
 /**
@@ -20,9 +20,7 @@ browser.runtime.onMessage.addListener(function (response) {
 
     // 发送响应到前端页面
     const event = new CustomEvent('get-message-event', {
-        detail: {
-            data: response
-        },
+        detail: response.message,
         bubbles: true,  // 事件是否向上层冒泡
         cancelable: true,  // 事件是否是可取消的
     });
