@@ -1,0 +1,36 @@
+{
+  "name": "Native Message For Java",
+  "description": "Send a message to a native Java application.",
+  "version": "1.0",
+  "manifest_version": 2,
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "firefox-native-message@laoliang.ink",
+      "strict_min_version": "50.0"
+    }
+  },
+  "permissions": [
+    "tabs",
+    "nativeMessaging"
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

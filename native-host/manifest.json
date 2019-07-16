@@ -1,0 +1,9 @@
+{
+  "name": "ink.laoliang.firefox",
+  "description": "Native Messaging Application",
+  "path": "start.bat",
+  "type": "stdio",
+  "allowed_extensions": [
+    "firefox-native-message@laoliang.ink"
+  ]
+}
