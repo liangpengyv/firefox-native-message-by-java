@@ -5,15 +5,6 @@
 const port = browser.runtime.connectNative('ink.laoliang.firefox');
 
 /**
- * 监听 content.js
- */
-browser.runtime.onMessage.addListener(function (msg) {
-
-    // 向本地应用发送消息
-    port.postMessage(msg);
-});
-
-/**
  * 监听端口响应
  */
 port.onMessage.addListener(function (msg) {
@@ -37,4 +28,13 @@ port.onDisconnect.addListener(function (msg) {
 
         });
     });
+});
+
+/**
+ * 监听 content.js
+ */
+browser.runtime.onMessage.addListener(function (msg) {
+
+    // 向本地应用发送消息
+    port.postMessage(msg);
 });
